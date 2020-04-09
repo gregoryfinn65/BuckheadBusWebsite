@@ -28,9 +28,9 @@
 
 <ul class="nav">
     <li><asp:Label ID="lblAdmin" runat="server" Text="IsAdmin?"></asp:Label></li>
-<li><a href="/PublicBusSchedule.aspx">Bus Schedule</a></li>
+<li><a href="PublicBusSchedule.aspx">Bus Schedule</a></li>
 <li><a href="#">Contact Us</a></li>
-<li><a href="../FAQ.aspx">FAQ</a></li>
+<li><a href="FAQ.aspx">FAQ</a></li>
 <li><asp:LoginView ID="LoginView" runat="server">
     <AnonymousTemplate>
         <asp:LoginStatus ID="LoginStatus" runat="server" />
