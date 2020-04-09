@@ -1,0 +1,92 @@
+﻿<%@ Master Language="VB" CodeFile="BuckheadBusMasterPage.master.vb" Inherits="BuckheadBusMasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    
+    <title><asp:ContentPlaceHolder id="ContentPlaceHolderTitle" runat="server">
+         <!-- Title entered here  -->
+           </asp:ContentPlaceHolder></title>
+    <link href="css/BuckheadBusMainStyleSheet.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+
+
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+ <!-- Custom code starts here -->
+
+<div class="hold">
+<div class="header">
+<div class="container">
+
+<a href="Default.aspx"><div id="logo">THE BUCKHEAD BUS</div></a>
+
+<ul class="nav">
+    <li><asp:Label ID="lblAdmin" runat="server" Text="IsAdmin?"></asp:Label></li>
+<li><a href="/PublicBusSchedule.aspx">Bus Schedule</a></li>
+<li><a href="#">Contact Us</a></li>
+<li><a href="../FAQ.aspx">FAQ</a></li>
+<li><asp:LoginView ID="LoginView" runat="server">
+    <AnonymousTemplate>
+        <asp:LoginStatus ID="LoginStatus" runat="server" />
+    </AnonymousTemplate>
+    <LoggedInTemplate>
+        <asp:LoginName ID="LoginName" runat="server" />, 
+        
+        <asp:LoginStatus ID="LoginStatus1" runat="server" />
+    </LoggedInTemplate>
+    </asp:LoginView></li>
+</ul>
+</div>
+</div>
+</div>
+
+<asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+  
+</asp:ContentPlaceHolder>
+
+
+<div class="section">
+<div class="footer">
+ <div class="container white">
+      <div class="col four left">
+        <h1>The Buckhead Bus</h1>
+        <p>The Buckhead Bus is the leader in Kennesaw to Buckhead transportation with over 3 years of experience and hundeds of passengers served.</p>
+          <p></p>
+      </div>
+      <div class="col four left">
+        <h1><br /></h1>
+        <p>Contact Us   <br />
+        FAQ             <br />
+        Give Feedback <br />
+            About Us <br />
+        </p>
+      </div>
+      <div class="col four left">
+        <h1>Why?</h1>
+        <p></p>
+        <p></p>
+      </div>
+      <div class="col four left">
+        <h1>Who?</h1>
+        <p></p>
+        <p></p>
+</div>
+<div class="group"></div>
+</div>
+</div>
+</div>
+
+
+
+ <!-- Custom code ends here -->
+
+</div>
+</form>
+</body>
+</html>
