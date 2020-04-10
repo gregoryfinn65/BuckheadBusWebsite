@@ -14,7 +14,7 @@
 <div class="container slidercontent">
 <h1 class="hero">The Buckhead Bus</h1>
 <h2 class="hero">Students most trusted ride.</h2>
-<div class="call"><span>View Bus Schedules!</span></div>
+<div class="call"><a href="/PublicBusSchedule.aspx"><span>View Bus Schedules!</span></a></div>
 </div>
 </div>
 </div>

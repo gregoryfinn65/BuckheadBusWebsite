@@ -8,8 +8,6 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
    
-    
-    
 <div class="section bg">
 <div class="container">
 <h1>Login</h1>
