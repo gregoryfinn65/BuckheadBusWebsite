@@ -8,9 +8,20 @@
         
 <div class="section bg">
 <div class="container">
-<h1>Account Information</h1>
+<h1><asp:Label id='lblWelcome' runat="server" Text="Label"></asp:Label></h1>
+<h2><asp:Label runat="server" id="lblHello" Text="Label"></asp:Label></h2>
 <div class="centerdiv">
     
+    
+
+
+
+
+
+
+
+
+
 </div>
 <br />
 <br />
