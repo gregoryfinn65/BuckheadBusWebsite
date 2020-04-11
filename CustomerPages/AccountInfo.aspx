@@ -38,8 +38,12 @@
     </asp:SqlDataSource>
 
 </div>
-<br />
-<br />
+    <br />
+    <br />
+    <div class="centerdiv">
+           
+<h2 style="color:gray">To become a driver please <a href="../Contact.aspx">contact us</a> so an Administrator can perform the necessary steps to register you. </h2>
+    </div>
 <div class="group"></div>
 </div>
 </div>

@@ -156,6 +156,11 @@ h2.hero {
     margin-bottom: 60px;
 }
 
+h3.hero {
+    font-size: 30px;
+    margin-bottom: 60px;
+}
+
 h1.hero:after {
     content: "";
     width: 300px;
@@ -343,6 +348,7 @@ h2 {
     font-weight: 400;
     font-size: 18px;
 }
+
 
 .left,
 .left > h1,

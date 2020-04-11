@@ -46,6 +46,7 @@
                 <a href="/CustomerPages/AccountInfo.aspx">Account Information</a>
                 <a href="/AdminPages/ReportsMainPage.aspx">Reports</a>
                 <a href="/AdminPages/RouteandTicketEditing.aspx">Route and Ticket Editing</a>
+                  <a href="/AdminPages/UserManagement.aspx">User Management</a>
                 <asp:LoginStatus ID="LoginStatus1" runat="server" />
               </div>
             </div>

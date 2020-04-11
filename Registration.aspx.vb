@@ -27,21 +27,24 @@ Partial Class Registration
                 End Using
             End Using
             Dim messege As String = String.Empty
-                Select Case userId
-                    Case -1
-                        messege = "Username already exists."
-                    Case -2
-                        messege = "This email address has already been used before."
-                    Case Else
-                        messege = "Registration has been sucessful! Please check your email to complete activation!"
-                        SendActivationEmail(userId)
-                        Exit Select
-                End Select
+            Select Case userId
+                Case -1
+                    messege = "Username already exists."
+                Case -2
+                    messege = "This email address has already been used before."
+                Case Else
+                    'messege = "Registration has been sucessful! Please check your email to complete activation!"
+                    Response.Write("<script language='javascript'>window.alert('Registration has been sucessful! Please check your email to complete activation!');window.location='Default.aspx';</script>")
+                    SendActivationEmail(userId)
+                    Exit Select
+            End Select
+            'ClientScript.RegisterStartupScript([GetType](), "alert",
+            '(Convert.ToString("alert( ' ") & messege) + " ');", True)
 
-                ClientScript.RegisterStartupScript([GetType](), "alert",
-                (Convert.ToString("alert( ' ") & messege) + " ');", True)
-            End Using
-            End Sub
+
+        End Using
+
+    End Sub
     Private Sub SendActivationEmail(userId As Integer)
         Dim activationCode As String = Guid.NewGuid().ToString()
         Using con As New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\BuckheadBusDatabase.mdf;Integrated Security=True")
@@ -61,12 +64,12 @@ Partial Class Registration
         Using mm As New MailMessage("thebuckheadbus@gmail.com", Email.Text)
             mm.Subject = "The Buckhead Bus Account Activation"
             Dim body As String = "Hello " + UserName.Text.Trim() + ","
-            body += "<br /><br />Thank you for choosing What WEAR When. Our goal is to make selecting "
-            body += "your outfit for any occasion as stress free as possible."
+            body += "<br /><br />Thank you for choosing The Buckhead Bus. Our goal is to make sure "
+            body += "your ride home is as reliable and stress free as possible."
             body += "<br />Please click the link below to activate your account."
             body += "<br />For security purposes the link will expire in 24 hours."
             body += "<br /><br />Thank you and welcome!"
-            body += "<br />-What WEAR When Team"
+            body += "<br />-The Buckhead Bus Team"
             body += "<br /><br /><a href = '" +
            Request.Url.GetLeftPart(UriPartial.Authority) +
            Page.ResolveUrl("~/Activation.aspx?ActivationCode=" & activationCode) + "'> Click here to activate your account!"

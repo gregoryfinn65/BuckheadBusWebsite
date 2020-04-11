@@ -19,10 +19,10 @@ ConfigurationManager.ConnectionStrings("DatabaseConnectionString").ConnectionStr
                         con.Close()
                         If rowsAffected = 1 Then
                             lblMessage.Text = "Activation Has Been Successful!"
-                            lblLogIn.Text = <a href="/LogIn.aspx">Log In</a>
+
                         Else
                             lblMessage.Text = "Error, Invalid Activation Code."
-                            lblLogIn.Text = " "
+
                         End If
                     End Using
                 End Using

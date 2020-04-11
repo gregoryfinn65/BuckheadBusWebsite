@@ -8,8 +8,10 @@
 
 <div class="section bg">
 <div class="container">
-<h1>Activation</h1>
-    <h2><asp:Label ID="lblMessage" runat="server" Text=""></asp:Label><asp:Label ID="lblLogIn" runat="server" Text=""></asp:Label></h2>
+<h1>Activation!</h1>
+    <h2><asp:Label ID="lblMessage" runat="server" Text=""></asp:Label></h2>
+
+    <h2><a href="Login.aspx">Login</a></h2>
 </div>
 </div>
 

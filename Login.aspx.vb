@@ -4,6 +4,7 @@ Imports System.Configuration
 Imports System.Web.Security
 Partial Class Login
     Inherits System.Web.UI.Page
+
     Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
         If Not Me.IsPostBack Then
             If Me.Page.User.Identity.IsAuthenticated Then
@@ -15,6 +16,10 @@ Partial Class Login
             End If
         End If
     End Sub
+
+
+
+
     Protected Sub LoginButton_Click(sender As Object, e As AuthenticateEventArgs) Handles Login1.Authenticate
         ' Initialize FormsAuthentication, for what it's worth
         FormsAuthentication.Initialize()
