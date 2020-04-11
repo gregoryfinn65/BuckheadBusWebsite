@@ -16,6 +16,8 @@
 
 </head>
 <body>
+
+
     <form id="form1" runat="server">
     <div>
  <!-- Custom code starts here -->
@@ -24,27 +26,74 @@
 <div class="header">
 <div class="container">
 
-<a href="Default.aspx"><div id="logo">THE BUCKHEAD BUS</div></a>
+<a href="/Default.aspx"><div id="logo">THE BUCKHEAD BUS</div></a>
 
 <ul class="nav">
-    <li><asp:Label ID="lblAdmin" runat="server" Text="IsAdmin?"></asp:Label></li>
-<li><a href="/PublicBusSchedule.aspx">Bus Schedule</a></li>
-<li><a href="#">Contact Us</a></li>
-<li><a href="../FAQ.aspx">FAQ</a></li>
-<li><asp:LoginView ID="LoginView" runat="server">
+    <li><asp:LoginView ID="LoginView" runat="server">
     <AnonymousTemplate>
         <asp:LoginStatus ID="LoginStatus" runat="server" />
     </AnonymousTemplate>
     <LoggedInTemplate>
-        <asp:LoginName ID="LoginName" runat="server" />, 
-        
-        <asp:LoginStatus ID="LoginStatus1" runat="server" />
     </LoggedInTemplate>
+     <RoleGroups>
+        <asp:RoleGroup Roles="Admin">     
+        <ContentTemplate>
+            <div class="dropdown">
+               <button class="dropbtn">
+                   <asp:LoginName ID="LoginName1" runat="server" />
+               </button>
+              <div class="dropdown-content">
+                <a href="/CustomerPages/AccountInfo.aspx">Account Information</a>
+                <a href="/AdminPages/ReportsMainPage.aspx">Reports</a>
+                <a href="/AdminPages/RouteandTicketEditing.aspx">Route and Ticket Editing</a>
+                <asp:LoginStatus ID="LoginStatus1" runat="server" />
+              </div>
+            </div>
+        </ContentTemplate>
+        </asp:RoleGroup>
+         <asp:RoleGroup Roles="Driver">
+             <ContentTemplate>
+            <div class="dropdown">
+               <button class="dropbtn">
+                   <asp:LoginName ID="LoginName1" runat="server" />
+               </button>
+              <div class="dropdown-content">
+                <a href="/CustomerPages/AccountInfo.aspx">Account Information</a>
+                <a href="/DriverPages/BusManagement.aspx">Bus Management</a>
+                <a href="/DriverPages/RouteManagement.aspx">Route Management</a>
+                <a href="/DriverPages/RouteSchedule.aspx">Route Schedule</a>
+                <asp:LoginStatus ID="LoginStatus1" runat="server" />
+              </div>
+            </div>
+        </ContentTemplate>
+         </asp:RoleGroup>
+         <asp:RoleGroup Roles="Customer">
+             <ContentTemplate>
+            <div class="dropdown">
+               <button class="dropbtn">
+                   <asp:LoginName ID="LoginName1" runat="server" />
+               </button>
+              <div class="dropdown-content">
+                <a href="/CustomerPages/AccountInfo.aspx">Account Information</a>
+                <a href="/CustomerPages/BookTrip.aspx">Book Trip</a>
+                <a href="/CustomerPages/CustomerPurchaseHistory.aspx">Purchase History</a>
+                <a href="/CustomerPages/CustomerCart.aspx">🛒 Shopping Cart</a>
+                <asp:LoginStatus ID="LoginStatus1" runat="server" />
+              </div>
+            </div>
+        </ContentTemplate>
+         </asp:RoleGroup>
+    </RoleGroups>
     </asp:LoginView></li>
+<li><a class="redglow" href="/PublicBusSchedule.aspx">Bus Schedule</a></li>
+<li><a class="redglow" href="/Contact.aspx">Contact Us</a></li>
+<li><a class="redglow" href="/FAQ.aspx">FAQ</a></li>
+
 </ul>
 </div>
 </div>
 </div>
+
 
 <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
   

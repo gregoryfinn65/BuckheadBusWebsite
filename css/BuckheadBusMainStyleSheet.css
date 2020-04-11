@@ -96,7 +96,7 @@ ul.nav {
 }
 
     ul.nav li {
-        float: left;
+        float: right;
         position: relative;
     }
 
@@ -105,8 +105,8 @@ ul.nav {
             font-size: 18px;
         }
 
-        ul.nav li:hover a {
-            color: red;
+        ul.nav li:hover a.redglow {
+           color:red;
         }
 
         ul.nav li a {
@@ -114,6 +114,7 @@ ul.nav {
             color: initial;
             text-decoration: initial;
         }
+
 /*
   Slider
 */
@@ -172,6 +173,10 @@ h1.hero:after {
         padding: 8px 13px;
         font-size: 20px;
         transition: background 0.15s linear;
+    }
+    .call a{
+        text-decoration:none;
+        color:white;
     }
 
         .call span:hover {
@@ -460,4 +465,51 @@ h2 {
     .group {
         display: none;
     }
+}
+
+.dropbtn {
+    background-color: #333;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    float: inherit;
+    overflow: hidden;
+}
+
+.dropdown {
+    position: relative;
+
+}
+
+.dropdown-content {
+    display: none;
+    position: fixed;
+    color: black;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+    .dropdown-content a {
+        color: black;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        line-height: 0;
+        
+    }
+
+        .dropdown-content a:hover {
+            background-color: lightgray;
+        }
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: gray;
 }

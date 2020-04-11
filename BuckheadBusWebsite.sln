@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "BuckheadBusWebsite", "..\BuckheadBusWebsite", "{C9D7F614-506C-4C5E-A6EE-0481F84E0A83}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "BuckheadBusWebsite", ".", "{C9D7F614-506C-4C5E-A6EE-0481F84E0A83}"
 	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_51739"
 		Debug.AspNetCompiler.PhysicalPath = "..\BuckheadBusWebsite\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51739\"
