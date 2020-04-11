@@ -12,12 +12,18 @@ Partial Class CustomerPages_AccountInfo
         End If
 
 
-
         lblWelcome.Text = "Hello, " + Context.User.Identity.Name
         lblHello.Text = "Dear " + Userrole & ", welcome to your account information!"
-
-
     End Sub
+
+    'If Request.Cookies.Get(".ASPXAUTH") Is Nothing Then
+    'useridtest.Text = ticket.UserData
+
+    'Else
+    'useridtest.Text = HttpContext.Current.Request.Cookies(".ASPXAUTH").Value.ToString()
+    'useridtest.Text = Request.Cookies("UserId").Value
+    ' End If
+
 
 
 

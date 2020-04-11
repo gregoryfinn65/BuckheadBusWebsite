@@ -12,15 +12,30 @@
 <h2><asp:Label runat="server" id="lblHello" Text="Label"></asp:Label></h2>
 <div class="centerdiv">
     
-    
-
-
-
-
-
-
-
-
+<br />
+    <asp:DetailsView ID="DetailsView1" runat="server"  width="500px" AutoGenerateRows="False" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" DataKeyNames="UserId" DataSourceID="SqlDataSource1" ForeColor="Black" GridLines="Vertical" CssClass="notamembertext">
+        <AlternatingRowStyle BackColor="#CCCCCC" />
+        <EditRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+        <Fields>
+            <asp:BoundField DataField="UserId" HeaderText="UserId" InsertVisible="False" ReadOnly="True" SortExpression="UserId" />
+            <asp:BoundField DataField="Username" HeaderText="Username" SortExpression="Username" />
+            <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
+            <asp:BoundField DataField="CreatedDate" HeaderText="CreatedDate" SortExpression="CreatedDate" />
+            <asp:BoundField DataField="LastLoginDate" HeaderText="LastLoginDate" SortExpression="LastLoginDate" />
+            <asp:BoundField DataField="FirstName" HeaderText="FirstName" SortExpression="FirstName" />
+            <asp:BoundField DataField="LastName" HeaderText="LastName" SortExpression="LastName" />
+            <asp:BoundField DataField="TelephoneNumber" HeaderText="TelephoneNumber" SortExpression="TelephoneNumber" />
+            <asp:BoundField DataField="RoleId" HeaderText="RoleId" SortExpression="RoleId" />
+        </Fields>
+        <FooterStyle BackColor="#CCCCCC" />
+        <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+        <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
+    </asp:DetailsView>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DatabaseConnectionString %>" SelectCommand="SELECT [UserId], [Username], [Email], [CreatedDate], [LastLoginDate], [FirstName], [LastName], [TelephoneNumber], [RoleId] FROM [USERS] WHERE ([UserId] = @UserId)">
+        <SelectParameters>
+            <asp:CookieParameter CookieName="UserId" Name="UserId" Type="Int32" />
+        </SelectParameters>
+    </asp:SqlDataSource>
 
 </div>
 <br />
