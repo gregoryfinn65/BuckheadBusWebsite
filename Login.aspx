@@ -12,7 +12,7 @@
 <div class="container">
 <h1>Login</h1>
 <div class="centerdiv">
-    <asp:Login ID="Login1" runat="server" TitleText="" CssClass="notamembertext"></asp:Login>
+    <asp:Login ID="Login1" runat="server" TitleText="" DestinationPageUrl="/Default.aspx" Font-Bold="False" Font-Size="Larger" RenderOuterTable="False" UserNameLabelText="Username:"></asp:Login>
 </div>
     <br />
     <br />

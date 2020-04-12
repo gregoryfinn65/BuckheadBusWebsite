@@ -1,7 +1,4 @@
 ﻿
-Partial Class BuckheadBusMasterPage
-    Inherits System.Web.UI.MasterPage
-
+Public Class BuckheadBusMasterPage
 
 End Class
-

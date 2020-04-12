@@ -13,6 +13,7 @@
 <h1>User Management</h1>
     <h2>Manage user elements like role assignment here.</h2><br />
     <h2>Search by any user attribue: <asp:TextBox ID="SearchBox" Text="" runat="server"></asp:TextBox><asp:Button ID="SearchButton" runat="server" Text="Search" /></h2>
+    <p style="text-align:center">Just press search for list of all users.</p>
        <div class="centerdiv">
    <p>Matches found:<asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True"></asp:DropDownList><br /><br /></p>
     </div>

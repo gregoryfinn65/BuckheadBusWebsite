@@ -9,6 +9,7 @@
     <div class="section bg">
 <div class="container">
 <h1>Route Management</h1>
+<h2>Add your trips here.</h2>
 <br />
 <br />
 <div class="centerdiv">

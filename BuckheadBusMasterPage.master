@@ -1,4 +1,4 @@
-﻿<%@ Master Language="VB" CodeFile="BuckheadBusMasterPage.master.vb" Inherits="BuckheadBusMasterPage" %>
+﻿<%@ Master Language="VB"  %>
 
 <!DOCTYPE html>
 
@@ -9,6 +9,7 @@
          <!-- Title entered here  -->
            </asp:ContentPlaceHolder></title>
     <link href="css/BuckheadBusMainStyleSheet.css" rel="stylesheet" />
+    <link href="css/StyleSheet.css" rel="stylesheet" />
     <asp:ContentPlaceHolder id="head" runat="server">
 
 
@@ -47,6 +48,7 @@
                 <a href="/AdminPages/ReportsMainPage.aspx">Reports</a>
                 <a href="/AdminPages/RouteandTicketEditing.aspx">Route and Ticket Editing</a>
                   <a href="/AdminPages/UserManagement.aspx">User Management</a>
+                    <a href="/AdminPages/locationManagement.aspx">Location Management</a>
                 <asp:LoginStatus ID="LoginStatus1" runat="server" />
               </div>
             </div>
@@ -104,28 +106,34 @@
 <div class="section">
 <div class="footer">
  <div class="container white">
-      <div class="col four left">
-        <h1>The Buckhead Bus</h1>
-        <p>The Buckhead Bus is the leader in Kennesaw to Buckhead transportation with over 3 years of experience and hundeds of passengers served.</p>
-          <p></p>
-      </div>
-      <div class="col four left">
-        <h1><br /></h1>
-        <p>Contact Us   <br />
-        FAQ             <br />
-        Give Feedback <br />
-            About Us <br />
-        </p>
-      </div>
-      <div class="col four left">
-        <h1>Why?</h1>
-        <p></p>
-        <p></p>
-      </div>
-      <div class="col four left">
-        <h1>Who?</h1>
-        <p></p>
-        <p></p>
+<div class="col four left">
+<h1>The Buckhead Bus</h1>
+<p>The Buckhead Bus is the leader in Kennesaw to Buckhead transportation with over 3 years of experience and hundeds of passengers served.</p>
+<p></p><br />
+</div>
+<div class="col four left">
+<h2></h2>
+
+
+</div>
+<div class="col four left">
+<br />
+<br />
+    <a href="/Default.aspx" class="glowbutton glow-button inactiveglow">Home</a><br />
+    <a href="/Contact.aspx" class="glowbutton glow-button inactiveglow">Contact Us</a><br />
+    <a href="/PublicBusSchedule.aspx" class="glowbutton glow-button inactiveglow">Bus Schedule</a>
+
+</div>
+<div class="col four left">
+<br /><br />
+
+<a href="/Registration.aspx" class="glowbutton glow-button inactiveglow">Register</a><br />
+<a href="/FAQ.aspx" class="glowbutton glow-button inactiveglow">FAQ</a><br />
+<a href="/Login.aspx" class="glowbutton glow-button inactiveglow">Login</a>
+
+
+
+
 </div>
 <div class="group"></div>
 </div>

@@ -7,7 +7,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
     <div class="section">
-<div class="container">
+<div class="container" style="color:white">
 <h1>Frequently Asked Questions!</h1>
 <h2></h2>
 <div class="col three">
