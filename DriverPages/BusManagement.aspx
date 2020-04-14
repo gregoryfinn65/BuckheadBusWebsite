@@ -199,7 +199,7 @@
                     <asp:TextBox ID="NumberOfSeatsBox" runat="server"></asp:TextBox>
                 </td>
                 <td>
-                    <asp:TextBox ID="BusNameBox" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="BusNameBox" runat="server" ></asp:TextBox>
                 </td>
                 <td>
                    <asp:CheckBox ID="ACbox" runat="server" />
@@ -211,7 +211,7 @@
         </tbody></table>
 
 </div>
-
+<br />
 </div>
 
 
