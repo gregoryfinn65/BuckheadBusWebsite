@@ -8,8 +8,10 @@ Partial Class Contact
         txtPhone.Text = ""
         txtQ.Text = ""
         lblMessage.Text = ""
+
+        txtName.Focus()
     End Sub
     Protected Sub btnSubmit_Click(sender As Object, e As EventArgs) Handles btnSubmit.Click
-
+        lblMessage.Text = "Thank you for reaching out."
     End Sub
 End Class
