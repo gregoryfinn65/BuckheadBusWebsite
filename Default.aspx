@@ -21,12 +21,12 @@
 
 <div class="section bg">
 <div class="container">
-<h1>An authentic experience like no other.</h1>
-<h2>Our Story.</h2>
+<h1>A different ride experience.</h1>
+<h2>Real pictures of our riders.</h2>
 <div class="col three bg nopad">
 <div class="imgholder"><img src="images/partybusfolks1.jpg" /></div>
-<h1 class="feature">The First Ride</h1>
-<p>Our first ride was January 3rd, 2017.</p>
+<h1 class="feature">Our First Ride</h1>
+<p>Our first was January 3rd, 2017.</p>
 </div>
 <div class="col three bg nopad">
 <div class="imgholder"><img src="images/partybusfolks2.jpg" /></div>
@@ -35,24 +35,24 @@
 </div>
 <div class="col three bg nopad">
 <div class="imgholder"><img src="images/partybusfolks3.jpg" /></div>
-<h1 class="feature">Fun Times and Better Memories!</h1>
-<p>Buckle up for a thrilling ride!.</p>
+<h1 class="feature">Fun Times!</h1>
+<p>Nothing beats the fun times people have on The Buckhead Bus.</p>
 </div>
 <div class="group margin"></div>
 <div class="col three bg nopad">
 <div class="imgholder"><img src="images/partybusfolks4.jpg" /></div>
 <h1 class="feature">A Ride For Everyone</h1>
-<p>Whether you are a consistent party goer or not, we accomade all types of parties.</p>
+<p>Everyone loves to the ride on The Buckhead Bus, even less rowdy folks!</p>
 </div>
 <div class="col three bg nopad">
 <div class="imgholder"><img src="images/partybusfolks5.jpg" /></div>
 <h1 class="feature">Mardi Gras</h1>
-<p>Join us for themed bus rides!</p>
+<p>Mardi Gras is our riders favorite holiday.</p>
 </div>
 <div class="col three bg nopad">
 <div class="imgholder"><img src="images/partybusfolks6.jpg" /></div>
-<h1 class="feature">The Original Buckhead Bus</h1>
-<p>The bus that started it all..</p>
+<h1 class="feature">The First Bus</h1>
+<p>This is an actual photo of the first Buckhead Bus to run.</p>
 </div>
 <div class="group"></div>
 </div>
