@@ -13,12 +13,12 @@
 <div class="col three">
 <h1 class="icon side">?</h1>
 <h1 class="feature side">What is the cost of a round trip?</h1>
-<p class="side">Contact Buckhead Bus for services and fees.</p>
+<p class="side">Prices vary based on date and time, please contact our support team for services and fees.</p>
 </div>
 <div class="col three">
 <h1 class="icon side">?</h1>
 <h1 class="feature side">Do you accept Credit Cards?</h1>
-<p class="side">Yes, we accept all major credit cards so you don’t always have to worry about having cash.  We strive to make your Buckhead Bus experience with us as easy as possible.</p>
+<p class="side">Yes, we strive to make your Buckhead Bus experience with us as easy as possible.</p>
 </div>
 <div class="col three">
 <h1 class="icon side">?</h1>
@@ -28,18 +28,18 @@
 <div class="group margin"></div>
 <div class="col three">
 <h1 class="icon side">?</h1>
-<h1 class="feature side">Can I drive for Buckhead Bus?</h1>
-<p class="side">Wow wow wow wow wow wow wow</p>
+<h1 class="feature side">Who can drive for Buckhead Bus?</h1>
+<p class="side">Any inidvidual with a valid drivers license, past transportation experience, and an adequate bus may be a fit. Contact our support team to learn more.</p>
 </div>
 <div class="col three">
 <h1 class="icon side">?</h1>
-<h1 class="feature side">Wow</h1>
-<p class="side">Wow wow wow wow wow wow wow wow</p>
+<h1 class="feature side">How do I cancel a trip?</h1>
+<p class="side">Contact our support team or delete a ride within your customer portal. </p>
 </div>
 <div class="col three">
 <h1 class="icon side">?</h1>
-<h1 class="feature side">Wow</h1>
-<p class="side">Wow wow wow wow wow wow wow wow</p>
+<h1 class="feature side">What if the driver&nbsp; cancels the trip?</h1>
+<p class="side">Our team will provide rebooking options or refund depending on the cancellation circumstances.</p>
 </div>
 <div class="group margin"></div>
 </div>
