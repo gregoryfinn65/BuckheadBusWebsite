@@ -14,8 +14,8 @@
         .auto-style8 {
             width: 520px;
             height: 25px;
-            text-align: right;
-        }
+        text-align: right;
+    }
         .auto-style9 {
             height: 25px;
         }
@@ -23,23 +23,23 @@
             float: right;
         }
         .auto-style12 {
-            height: 31px;
-        }
-        .auto-style13 {
-            width: 520px;
-            height: 20px;
-        }
-        .auto-style14 {
-            height: 20px;
-        }
-        .auto-style15 {
-            width: 520px;
-            height: 31px;
-            text-align: right;
-        }
-        .auto-style16 {
-            width: 520px;
-        }
+        height: 31px;
+    }
+    .auto-style13 {
+        width: 520px;
+        height: 20px;
+    }
+    .auto-style14 {
+        height: 20px;
+    }
+    .auto-style15 {
+        width: 520px;
+        height: 31px;
+        text-align: right;
+    }
+    .auto-style16 {
+        width: 520px;
+    }
     </style>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
