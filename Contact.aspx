@@ -3,15 +3,100 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolderTitle" Runat="Server">Contact Us
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" Runat="Server">
+    <style type="text/css">
+        .auto-style3 {
+            width: 518px;
+        }
+        .auto-style4 {
+            float: left;
+        }
+        .auto-style5 {
+            width: 100%;
+            float: left;
+        }
+        .auto-style6 {
+            width: 518px;
+            height: 31px;
+            text-align: right;
+        }
+        .auto-style8 {
+            width: 518px;
+            height: 25px;
+            text-align: right;
+        }
+        .auto-style9 {
+            height: 25px;
+        }
+        .auto-style10 {
+            float: right;
+        }
+        .auto-style12 {
+            height: 31px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="section bg">
 <div class="container">
 <h1>Contact Us</h1>
-<div class="group"></div>
-</div>
-</div>
+    <div>
+    <table class="auto-style5" align="right">
+        <tr>
+            <td class="auto-style6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Name:</td>
+            <td class="auto-style12">
+                <asp:TextBox ID="txtName" runat="server" CssClass="auto-style4"></asp:TextBox>
+            </td>
+        </tr>
+        <tr>
+            <td class="auto-style6">Email Address:</td>
+            <td class="auto-style12">
+                <asp:TextBox ID="txtEmail" runat="server" CssClass="auto-style4"></asp:TextBox>
+            </td>
+        </tr>
+        <tr>
+            <td class="auto-style6">Phone Number:</td>
+            <td class="auto-style12">
+                <asp:TextBox ID="txtPhone" runat="server" CssClass="auto-style4"></asp:TextBox>
+            </td>
+        </tr>
+        <tr>
+            <td class="auto-style8">Questions or Concerns:</td>
+            <td class="auto-style9">
+                <asp:TextBox ID="txtQ" runat="server" CssClass="auto-style4" Height="110px" Width="310px"></asp:TextBox>
+            </td>
+        </tr>
+        <tr>
+            <td class="auto-style3">&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="auto-style3">
+                <asp:Button ID="btnClear" runat="server" Text="Clear" CssClass="auto-style10" />
+            </td>
+            <td>
+                <asp:Button ID="btnSubmit" runat="server" Text="Submit" CssClass="auto-style4" />
+            </td>
+        </tr>
+        <tr>
+            <td class="auto-style3">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="auto-style3">
+                &nbsp;</td>
+            <td>
+                <asp:Label ID="lblMessage" runat="server" CssClass="auto-style4" Width="83px"></asp:Label>
+            </td>
+        </tr>
+    </table>
+    </div>
+    
 
 
+
+    </div>
+    </div>
 </asp:Content>
 
