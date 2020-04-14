@@ -224,15 +224,15 @@
 			</tr>
             <tr style="">
                 <td>
-                    <asp:button runat="server" text="Add Trip" id="AddBusButton" />
+                    <asp:button autopostback=True runat="server" text="Add Trip" id="AddBusButton" />
                     <asp:button  runat="server" text="Clear"  id="ClearButton" />
                 </td>
           
                 <td>
-                   <input type="datetime-local" id="birthdaytime" name="birthdaytime">
+                   <input runat="server" type="datetime-local" id="DepartureDateTime" name="DepartureDateTime"/>
                 </td>
                 <td>
-                    <asp:TextBox ID="BusNameBox" runat="server" ></asp:TextBox>
+                    <asp:TextBox ID="PricePerSeat" runat="server" ></asp:TextBox>
                 </td>
                 <td>
                     <asp:DropDownList ID="ddlBusSelect" runat="server" DataSourceID="SqlDataSource2" DataTextField="BusName" DataValueField="BusId"></asp:DropDownList>
