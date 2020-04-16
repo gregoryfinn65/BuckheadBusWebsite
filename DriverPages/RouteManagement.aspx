@@ -27,7 +27,7 @@
                     <asp:Label ID="UserIdLabel" runat="server" Text='<%# Eval("UserId") %>' />
                 </td>
                 <td>
-                    <asp:Label ID="PricePerSeatLabel" runat="server" Text='<%# Eval("PricePerSeat") %>' />
+                    <asp:Label ID="PricePerSeatLabel" DataFormatString="{0:c}"  runat="server" Text='<%# Eval("PricePerSeat") %>' />
                 </td>
                 <td>
                     <asp:CheckBox ID="ACCheckBox" runat="server" Checked='<%# Eval("AC") %>' Enabled="false" />
@@ -59,7 +59,7 @@
                     <asp:TextBox ID="UserIdTextBox" runat="server" Text='<%# Bind("UserId") %>' />
                 </td>
                 <td>
-                    <asp:TextBox ID="PricePerSeatTextBox" runat="server" Text='<%# Bind("PricePerSeat") %>' />
+                    <asp:TextBox ID="PricePerSeatTextBox" DataFormatString="{0:c}"  runat="server" Text='<%# Bind("PricePerSeat") %>' />
                 </td>
                 <td>
                     <asp:CheckBox ID="ACCheckBox" runat="server" Checked='<%# Bind("AC") %>' />
@@ -96,7 +96,7 @@
                     <asp:TextBox ID="UserIdTextBox" runat="server" Text='<%# Bind("UserId") %>' />
                 </td>
                 <td>
-                    <asp:TextBox ID="PricePerSeatTextBox" runat="server" Text='<%# Bind("PricePerSeat") %>' />
+                    <asp:TextBox ID="PricePerSeatTextBox" DataFormatString="{0:c}"  runat="server" Text='<%# Bind("PricePerSeat") %>' />
                 </td>
                 <td>
                     <asp:CheckBox ID="ACCheckBox" runat="server" Checked='<%# Bind("AC") %>' />
@@ -124,7 +124,7 @@
                     <asp:Label ID="UserIdLabel" runat="server" Text='<%# Eval("UserId") %>' />
                 </td>
                 <td>
-                    <asp:Label ID="PricePerSeatLabel" runat="server" Text='<%# Eval("PricePerSeat") %>' />
+                    <asp:Label ID="PricePerSeatLabel" DataFormatString="{0:c}" runat="server" Text='<%# Eval("PricePerSeat") %>' />
                 </td>
                 <td>
                     <asp:CheckBox ID="ACCheckBox" runat="server" Checked='<%# Eval("AC") %>' Enabled="false" />
@@ -177,7 +177,7 @@
                     <asp:Label ID="UserIdLabel" runat="server" Text='<%# Eval("UserId") %>' />
                 </td>
                 <td>
-                    <asp:Label ID="PricePerSeatLabel" runat="server" Text='<%# Eval("PricePerSeat") %>' />
+                    <asp:Label ID="PricePerSeatLabel"  DataFormatString="{0:c}" runat="server" Text='<%# Eval("PricePerSeat") %>' />
                 </td>
                 <td>
                     <asp:CheckBox ID="ACCheckBox" runat="server" Checked='<%# Eval("AC") %>' Enabled="false" />

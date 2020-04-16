@@ -22,7 +22,41 @@
 
 
 <div class="centerdiv">
-    <asp:GridView ID="GridView1" runat="server" EmptyDataText="There are no trips for this day."  DataSourceID="SqlDataSource1" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" >
+    <asp:GridView ID="GridView1" runat="server" EmptyDataText="There are no trips for this day."  DataSourceID="SqlDataSource1" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" AutoGenerateColumns="False" >
+         <Columns>
+             <asp:BoundField DataField="TripId" 
+                HeaderText="Trip ID" 
+                ReadOnly="True" >
+                <HeaderStyle HorizontalAlign="Left" />
+            </asp:BoundField>
+            <asp:BoundField DataField="Orgin" 
+                HeaderText="Orgin" 
+                ReadOnly="True" >
+                <HeaderStyle HorizontalAlign="Left" />
+            </asp:BoundField>
+            <asp:BoundField DataField="Destination" 
+                HeaderText="Destination" 
+                ReadOnly="True" >
+                <HeaderStyle HorizontalAlign="Left" />
+            </asp:BoundField>
+             <asp:BoundField DataField="AC" 
+                HeaderText="AC" 
+                ReadOnly="True" >
+                <HeaderStyle HorizontalAlign="Left" />
+            </asp:BoundField>
+             <asp:BoundField DataField="BusName" 
+                HeaderText="Bus Name" 
+                ReadOnly="True" >
+                <HeaderStyle HorizontalAlign="Left" />
+            </asp:BoundField>
+           
+             <asp:BoundField DataField="PricePerSeat" 
+                HeaderText="Price" 
+                ReadOnly="True" 
+                DataFormatString="{0:c}" >
+                <HeaderStyle HorizontalAlign="Left" />
+            </asp:BoundField>
+        </Columns>
         <AlternatingRowStyle BackColor="#CCCCCC" />
         <FooterStyle BackColor="#CCCCCC" />
         <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />

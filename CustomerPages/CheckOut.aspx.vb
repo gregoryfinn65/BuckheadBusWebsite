@@ -234,4 +234,81 @@ Partial Class Cart
         Return table
     End Function
 
+
+
+
+    Private Sub ConfirmOrderEmail(userId As Integer)
+        Dim Email As String
+        Dim FirstName As String
+        Dim LastName As String
+        Using con As New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\BuckheadBusDatabase.mdf;Integrated Security=True")
+            Using cmd As New SqlCommand("select Email, FirstName, LastName FROM USERS where UserId = @UserId ")
+                Using sda As New SqlDataAdapter
+                    cmd.CommandType = CommandType.Text
+                    cmd.Parameters.AddWithValue("@UserId", userId)
+                    cmd.Connection = con
+                    con.Open()
+                    Dim reader As SqlDataReader = cmd.ExecuteReader()
+                    reader.Read()
+                    Email = reader("Email").ToString
+                    FirstName = reader("FirstName").ToString
+                    LastName = reader("LastName").ToString
+                    con.Close()
+                End Using
+            End Using
+        End Using
+        Dim SubTotal = order.SubTotal.ToString("c")
+        Dim SalesTax = order.SalesTax.ToString("c")
+        Dim Total = order.Total.ToString("c")
+        Dim stringName As String
+        Dim EmailTicketNames As String = ""
+        Dim cart As ShoppingCart = Session("cart")
+        For Each item As CartItem In cart.GetItems()
+            If item.Quantity = 1 Then
+                stringName = String.Concat(" <br />", item.Name.ToString())
+                EmailTicketNames = String.Concat(EmailTicketNames, stringName)
+            Else
+                Dim Quantity As Double = item.Quantity
+                While Quantity <> 0
+                    stringName = String.Concat(" <br />", item.Name.ToString())
+                    EmailTicketNames = String.Concat(EmailTicketNames, stringName)
+                    Quantity = Quantity - 1
+                End While
+            End If
+        Next
+
+        Using mm As New MailMessage("thebuckheadbus@gmail.com", Email)
+            mm.Subject = "The Buckhead Bus Account Activation"
+            Dim body As String = "Hello " + FirstName + " " + LastName + ","
+            body += "<br /><br />Your odrer has been placed and your order detials will be listed below. Thank you for choosing The Buckhead Bus. "
+            body += "<br />"
+            body += EmailTicketNames
+            body += "<br />SubTotal:" + SubTotal
+            body += "<br /> SalesTax:" + SalesTax
+            body += "<br />-----------------"
+            body += "<br /> Total:" + Total
+            body += "<br /><br />Thank you and welcome!"
+            body += "<br />-The Buckhead Bus Team"
+            mm.Body = body
+            mm.IsBodyHtml = True
+            Dim smtp As New SmtpClient()
+            smtp.Host = "smtp.gmail.com"
+            smtp.EnableSsl = True
+            Dim NetworkCred As New System.Net.NetworkCredential()
+            NetworkCred.UserName = "thebuckheadbus@gmail.com"
+            NetworkCred.Password = "buckheadbus123"
+            smtp.UseDefaultCredentials = True
+            smtp.Credentials = NetworkCred
+            smtp.Port = 587
+            smtp.Send(mm)
+        End Using
+    End Sub
+
+
+
+
+
+
+
+
 End Class

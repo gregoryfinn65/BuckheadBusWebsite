@@ -11,6 +11,7 @@
 <div class="container">
 <h1 style="font-weight: bold">Thank You!</h1>
 <h2>Your order has been placed! The tickets will appear in your <a href="CustomerPages/CustomerPurchaseHistory.aspx">Purchase History</a></h2>
+ <h2>Check your email for confirmation of your order.</h2>
 </div>
 </div>
 
