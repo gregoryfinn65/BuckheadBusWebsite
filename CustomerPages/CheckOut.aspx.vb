@@ -199,10 +199,10 @@ Partial Class Cart
                     con.Open()
                     Try
                         cmd.ExecuteScalar()
-                        Response.Redirect("Completed.aspx")
+                        Response.Redirect("/Completed.aspx")
                         Session("cart") = Nothing
                         Session("order") = Nothing
-                        ' send email function 
+                        ConfirmOrderEmail(Request.Cookies("UserId").Value)
                     Catch ex As Exception
                         Label1.Text = ("Order was not placed!!! Something went wrong with your order.")
                     End Try
@@ -245,7 +245,7 @@ Partial Class Cart
             Using cmd As New SqlCommand("select Email, FirstName, LastName FROM USERS where UserId = @UserId ")
                 Using sda As New SqlDataAdapter
                     cmd.CommandType = CommandType.Text
-                    cmd.Parameters.AddWithValue("@UserId", userId)
+                    cmd.Parameters.AddWithValue("@UserId", userId.ToString)
                     cmd.Connection = con
                     con.Open()
                     Dim reader As SqlDataReader = cmd.ExecuteReader()
