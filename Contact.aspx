@@ -67,7 +67,7 @@
             </td>
         </tr>
         <tr>
-            <td class="auto-style8">Questions or Concerns:</td>
+            <td class="auto-style8">Questions, Concerns, or Request:</td>
             <td class="auto-style9">
                 <asp:TextBox ID="txtQ" runat="server" CssClass="auto-style4" Height="110px" Width="310px"></asp:TextBox>
             </td>

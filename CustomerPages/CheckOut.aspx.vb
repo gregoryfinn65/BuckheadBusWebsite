@@ -1,0 +1,237 @@
+﻿Imports System.Data.SqlClient
+Imports System.Web.Configuration
+Imports System.Reflection
+Imports System.Data
+Imports System.Net
+Imports System.Net.Mail
+Partial Class Cart
+    Inherits System.Web.UI.Page
+    Private order As Order
+    Protected Sub SubPage_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Dim cart As ShoppingCart = LoadCart()
+
+        ' check to see if cart has items 
+        Dim itemFound As Boolean = False
+        For Each item As CartItem In cart.GetItems
+            If item IsNot Nothing Then
+                itemFound = True
+            End If
+        Next
+        If itemFound Then
+            CheckOutPlaceHolder.Visible = True
+            NoCartPlaceHolder.Visible = False
+            ShowCart()
+        Else
+            NoCartPlaceHolder.Visible = True
+            CheckOutPlaceHolder.Visible = False
+        End If
+
+        'make an new oder 
+        If Session("order") Is Nothing Then
+            Order = New Order(DateTime.Now,
+                Nothing, Session("cart"))
+            Session("order") = Order
+        Else
+            Order = Session("order")
+            cart = Order.Cart
+        End If
+
+
+        lblSubtotal.Text = order.SubTotal.ToString("c")
+        lblSalesTax.Text = order.SalesTax.ToString("c")
+        lblTotal.Text = order.Total.ToString("c")
+
+    End Sub
+
+
+    ' checking to see if the Session is expired or assgining a new experation date  
+    Private Sub CheckTimeStamps()
+        If IsExpired() Then ' checking to see if the Session is is expired 
+            Response.Redirect(Request.Url.OriginalString)
+        Else
+            Dim t As DateTime
+            t = DateTime.Now
+            ViewState.Add("$$TimeStamp", t)
+            Dim page As String
+            page = Request.Url.AbsoluteUri
+            Session.Add(page + "_TimeStamp", t)
+        End If
+    End Sub
+
+
+    ' check for cart or load new cart
+    Private Function LoadCart() As ShoppingCart
+        CheckTimeStamps()
+        Dim cart As ShoppingCart
+        If Session("cart") Is Nothing Then
+            cart = New ShoppingCart()
+            Session("cart") = cart
+        Else
+            cart = Session("cart")
+        End If
+        Return cart
+    End Function
+
+    ' code to add data from cart to grid view
+    Private Sub ShowCart()
+        Dim cart As ShoppingCart = LoadCart()
+        ' adding data to carts gridview
+        CartGridView.DataSource = cart.GetItems()
+        CartGridView.DataBind()
+
+    End Sub
+
+
+
+    ' checking to see if the Session is is expired 
+    Private Function IsExpired() As Boolean
+        Dim page As String
+        page = Request.Url.AbsoluteUri
+        If Session(page + "_TimeStamp") Is Nothing Then
+            Return False
+        ElseIf ViewState("$$TimeStamp") Is Nothing Then
+            Return False
+        ElseIf Session(page + "_TimeStamp").ToString() _
+              = ViewState("$$TimeStamp").ToString() Then
+            Return False
+        Else
+            Return True
+        End If
+    End Function
+
+
+
+    ' code for deleting items from cart
+    Protected Sub CartGridView_RowDeleting(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewDeleteEventArgs) Handles CartGridView.RowDeleting
+        Dim cart As ShoppingCart
+        If Session("cart") Is Nothing Then
+            cart = New ShoppingCart()
+            Session("cart") = cart
+        Else
+            cart = Session("cart")
+        End If
+        cart.DeleteItem(e.RowIndex)
+        CartGridView.DataBind()
+
+        ' check to see if cart has items 
+        Dim itemFound As Boolean = False
+        For Each item As CartItem In cart.GetItems
+            If item IsNot Nothing Then
+                itemFound = True
+            End If
+        Next
+        If itemFound Then
+            CheckOutPlaceHolder.Visible = True
+            NoCartPlaceHolder.Visible = False
+            ShowCart()
+        Else
+            NoCartPlaceHolder.Visible = True
+            CheckOutPlaceHolder.Visible = False
+        End If
+    End Sub
+
+    ' code for updating items from cart
+    Protected Sub CartGridView_RowUpdating(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewUpdateEventArgs) Handles CartGridView.RowUpdating
+        Dim cart As ShoppingCart = LoadCart()
+        Dim cell As DataControlFieldCell
+        cell = CartGridView.Rows(e.RowIndex) _
+            .Controls(3)
+        Dim t As TextBox = cell.Controls(0)
+        Try
+            Dim q As Integer
+            q = Integer.Parse(t.Text)
+            cart.UpdateQuantity(e.RowIndex, q)
+        Catch ex As FormatException
+            e.Cancel = True
+        End Try
+        CartGridView.EditIndex = -1
+        CartGridView.DataBind()
+    End Sub
+
+    ' cart cancel row edit function 
+    Protected Sub CartGridView_RowCancelingEdit(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewCancelEditEventArgs) Handles CartGridView.RowCancelingEdit
+        e.Cancel = True
+        CartGridView.EditIndex = -1
+        CartGridView.DataBind()
+    End Sub
+
+    ' cart row edit function 
+    Protected Sub CartGridView_RowEditing(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewEditEventArgs) Handles CartGridView.RowEditing
+        CartGridView.EditIndex = e.NewEditIndex
+        CartGridView.DataBind()
+    End Sub
+
+
+    Protected Sub Wizard1_FinishButtonClick(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.WizardNavigationEventArgs) Handles Wizard1.FinishButtonClick
+
+        ' process credit card information here
+
+        Dim cart As ShoppingCart = Session("cart")
+        Dim TripIdList As String = ""
+        Dim stringId As String
+        For Each item As CartItem In cart.GetItems()
+            If item.Quantity = 1 Then
+                stringId = String.Concat(item.ID.ToString(), ",")
+                TripIdList = String.Concat(TripIdList, stringId)
+            Else
+                Dim Quantity As Double = item.Quantity
+                While Quantity <> 0
+                    stringId = String.Concat(item.ID.ToString(), ",")
+                    TripIdList = String.Concat(TripIdList, stringId)
+                    Quantity = Quantity - 1
+                End While
+            End If
+        Next
+        Dim userid As String = Request.Cookies("UserId").Value.ToString
+        Dim orderdate As String = order.OrderDate
+        Dim SubTotal As String = order.SubTotal
+        Dim salestax As String = order.SalesTax
+        Using con As New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\BuckheadBusDatabase.mdf;Integrated Security=True")
+            Using cmd As New SqlCommand("CompleteOrderandAssignTicket")
+                Using sda As New SqlDataAdapter
+                    cmd.CommandType = CommandType.StoredProcedure
+                    cmd.Parameters.AddWithValue("@UserId", userid)
+                    cmd.Parameters.AddWithValue("@OrderDate", orderdate)
+                    cmd.Parameters.AddWithValue("@SubTotal", SubTotal)
+                    cmd.Parameters.AddWithValue("@salestax", salestax)
+                    cmd.Parameters.AddWithValue("@TripIdString", TripIdList)
+                    cmd.Connection = con
+                    con.Open()
+                    Try
+                        cmd.ExecuteScalar()
+                        Response.Redirect("Completed.aspx")
+                        Session("cart") = Nothing
+                        Session("order") = Nothing
+                        ' send email function 
+                    Catch ex As Exception
+                        Label1.Text = ("Order was not placed!!! Something went wrong with your order.")
+                    End Try
+                    con.Close()
+                End Using
+            End Using
+        End Using
+
+        'If success Then
+
+        ' Else
+
+        ' End If
+    End Sub
+
+    Public Function ConvertToDataTable(Of T)(ByVal list As IList(Of T)) As DataTable
+        Dim table As New DataTable()
+        Dim fields() As FieldInfo = GetType(T).GetFields()
+        For Each field As FieldInfo In fields
+            table.Columns.Add(field.Name, field.FieldType)
+        Next
+        For Each item As T In list
+            Dim row As DataRow = table.NewRow()
+            For Each field As FieldInfo In fields
+                row(field.Name) = field.GetValue(item)
+            Next
+            table.Rows.Add(row)
+        Next
+        Return table
+    End Function
+
+End Class
