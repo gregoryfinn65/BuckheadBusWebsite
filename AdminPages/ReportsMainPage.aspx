@@ -12,7 +12,9 @@
        <div class="centerdiv">
         
     </div>
-<div class="group"></div>
+<div class="group">
+    Test
+</div>
 </div>
 </div>
 </asp:Content>
