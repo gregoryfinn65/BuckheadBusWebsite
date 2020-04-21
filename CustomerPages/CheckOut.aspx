@@ -13,16 +13,16 @@
         <asp:PlaceHolder ID="NoCartPlaceHolder" runat="server" Visible="False"> <h2>Your cart is empty. Please <a href="BookTrip.aspx">book a trip.</a></h2></asp:PlaceHolder>
     
 <div class="centerdiv">
-
+    <asp:CommandField ButtonType="Button" EditText="Change" 
+                ShowDeleteButton="True" ShowHeader="false" 
+                ShowEditButton="False" ItemStyle-BackColor="Black">
+                <HeaderStyle BorderStyle="None" />
+            </asp:CommandField>
         <asp:GridView ID="CartGridView" runat="server" 
         AutoGenerateColumns="False" 
         EmptyDataText="Your shopping cart is empty.">
         <Columns>
-            <asp:CommandField ButtonType="Button" EditText="Change" 
-                ShowDeleteButton="True" ShowHeader="false" 
-                ShowEditButton="True" ItemStyle-BackColor="Black">
-                <HeaderStyle BorderStyle="None" />
-            </asp:CommandField>
+            
             <asp:BoundField DataField="ID" 
                 HeaderText="Trip ID" 
                 ReadOnly="True" >

@@ -94,7 +94,7 @@
         <Columns>
             <asp:CommandField ButtonType="Button" EditText="Change" 
                 ShowDeleteButton="True" ShowHeader="false" 
-                ShowEditButton="True" ItemStyle-BackColor="Black">
+                ShowEditButton="False" ItemStyle-BackColor="Black">
                 <HeaderStyle BorderStyle="None" />
             </asp:CommandField>
             <asp:BoundField DataField="ID" 

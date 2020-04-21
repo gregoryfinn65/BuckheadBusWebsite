@@ -29,16 +29,19 @@ Partial Class Registration
             Select Case userId
                 Case -1
                     messege = "Username already exists."
+                    ClientScript.RegisterStartupScript([GetType](), "alert",
+            (Convert.ToString("alert( ' ") & messege) + " ');", True)
                 Case -2
                     messege = "This email address has already been used before."
+                    ClientScript.RegisterStartupScript([GetType](), "alert",
+            (Convert.ToString("alert( ' ") & messege) + " ');", True)
                 Case Else
                     'messege = "Registration has been sucessful! Please check your email to complete activation!"
                     Response.Write("<script language='javascript'>window.alert('Registration has been sucessful! Please check your email to complete activation!');window.location='Default.aspx';</script>")
                     SendActivationEmail(userId)
                     Exit Select
             End Select
-            'ClientScript.RegisterStartupScript([GetType](), "alert",
-            '(Convert.ToString("alert( ' ") & messege) + " ');", True)
+
 
 
         End Using
