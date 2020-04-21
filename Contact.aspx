@@ -51,13 +51,13 @@
         <tr>
             <td class="auto-style15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Name:</td>
             <td class="auto-style12">
-                <asp:TextBox ID="txtName" runat="server" CssClass="auto-style4"></asp:TextBox>
+                <asp:TextBox ID="txtName" runat="server" CssClass="auto-style4"></asp:TextBox><asp:RequiredFieldValidator ID="rfvName" runat="server" ErrorMessage="Please Enter a Name" ControlToValidate="txtName" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
             <td class="auto-style15">Email Address:</td>
             <td class="auto-style12">
-                <asp:TextBox ID="txtEmail" runat="server" CssClass="auto-style4"></asp:TextBox>
+                <asp:TextBox ID="txtEmail" runat="server" CssClass="auto-style4"></asp:TextBox><asp:RegularExpressionValidator ID="revEmail" runat="server" ErrorMessage="Please Enter a Valid Email" ControlToValidate="txtEmail" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator><asp:RequiredFieldValidator ID="rfvEmail" runat="server" ErrorMessage="Please Enter an Email" ControlToValidate="txtEmail" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
