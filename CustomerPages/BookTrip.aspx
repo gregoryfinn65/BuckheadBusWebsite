@@ -33,8 +33,13 @@
                 ReadOnly="True" >
                 <HeaderStyle HorizontalAlign="Left" />
             </asp:BoundField>
+            <asp:BoundField DataField="Departure" 
+                HeaderText="Departure Time" 
+                ReadOnly="True" >
+                <HeaderStyle HorizontalAlign="Left" />
+            </asp:BoundField>
             <asp:BoundField DataField="Orgin" 
-                HeaderText="Orgin" 
+                HeaderText="Origin" 
                 ReadOnly="True" >
                 <HeaderStyle HorizontalAlign="Left" />
             </asp:BoundField>

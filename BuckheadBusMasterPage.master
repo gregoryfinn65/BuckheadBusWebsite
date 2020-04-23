@@ -45,7 +45,8 @@
                </button>
               <div class="dropdown-content">
                 <a href="/CustomerPages/AccountInfo.aspx">Account Information</a>
-                <a href="/AdminPages/ReportsMainPage.aspx">Reports</a>
+                <a href="/AdminPages/ReportsMainPage.aspx">Trip Report</a>
+                  <a href="/AdminPages/UserReport.aspx">User Report</a>
                   <a href="/AdminPages/UserManagement.aspx">User Management</a>
                     <a href="/AdminPages/locationManagement.aspx">Location Management</a>
                 <asp:LoginStatus ID="LoginStatus1" runat="server" />
@@ -64,6 +65,7 @@
                 <a href="/DriverPages/BusManagement.aspx">Bus Management</a>
                 <a href="/DriverPages/RouteManagement.aspx">Route Management</a>
                 <a href="/DriverPages/RouteSchedule.aspx">Route Schedule</a>
+                <a href="/DriverPages/RiderReport.aspx">Rider Reports</a>
                 <asp:LoginStatus ID="LoginStatus1" runat="server" />
               </div>
             </div>
